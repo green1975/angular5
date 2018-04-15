@@ -1,0 +1,28 @@
+<div class="annonce">
+  <form>
+    <label>Tapez les mots clés de votre recherche</label>
+    <input type="text" name="annonce" placeholder="Rechercher"/>
+    <div>
+    <div (click)="isActive =!isActive" clickable>Selectionner plus de critères</div>
+    </div>
+    <div *ngIf="isActive">
+      <div>Selectionner une catégorie</div>
+      <select class="choice">
+        <option *ngFor="let cat of category">
+          {{cat}}
+        </option>
+      </select>
+        <p>Selectionner une région</p>
+        <select class="choice">
+          <option>
+          </option>
+        </select>
+          <p>Selectionner un prix</p>
+          <select class="choice">
+            <option>
+            </option>
+          </select>
+        </div>
+        <button type="submit" name="send">Rechercher</button>
+  </form>
+</div>

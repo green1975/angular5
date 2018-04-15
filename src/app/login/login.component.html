@@ -1,0 +1,55 @@
+<div class="loginform">
+<div class="logincadre" *ngIf="!isActive">
+  <form id="login" (ngSubmit)="login()" #userForm="ngForm">
+      <input type="text" [(ngModel)]="user.name"  name="username" placeholder="Identifiant"/>
+      <input type="password" [(ngModel)]="user.password" name="password" placeholder="Mot de passe"/>
+      <button mz-button type="submit" name="login">Connection</button>
+    </form>
+    <div>
+      Pas de Identifiant. <span (click)="isActive = !isActive"> Enregistrez-vous.</span>
+    </div>
+</div>
+<div class="registercadre" *ngIf="isActive">
+  <div>
+  <div>
+  <form  class="registerform" (ngSubmit)="saveUser()" #userForm="ngForm">
+    <div>
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="user.name" name="name">
+  </div>
+  <div>
+    <label for="name">Firstname</label>
+    <input type="text" [(ngModel)]="user.firstname" name="firstname">
+  </div>
+  <div>
+    <label for="name">Birthday</label>
+    <input type="text" [(ngModel)]="user.birthday" name="birthday">
+  </div>
+  <div>
+    <label for="name">Email</label>
+    <input type="email" [(ngModel)]="user.email" name="email">
+  </div>
+  <div>
+    <label for="name">Password</label>
+    <input type="password" [(ngModel)]="user.password" name="password">
+  </div>
+  <div>
+    <label for="name">Confirm Password</label>
+    <input type="password" [(ngModel)]="user.repeatPassword" name="repeatPassword">
+  </div>
+    <button mz-button type="submit">Save</button>
+  </form>
+</div>
+<div>
+  <img src="assets/register.jpg"/>
+</div>
+</div>
+<div>
+  Deja enregistré. <span (click)="isActive = !isActive"> Connectez-vous.</span>
+</div>
+</div>
+
+<!-- <ul>
+  <li *ngFor="let user of users">{{ user.name }}</li>
+</ul> -->
+</div>

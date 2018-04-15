@@ -1,0 +1,40 @@
+<div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+        <th>
+          Votre Panier
+        </th>
+        <th>
+          prix
+        </th>
+        <th>
+          Quantité
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of panier">
+        <td >
+          {{article.article}}
+          <img src="/assets/Melrose-S9.jpg" width="40px" height="40px"/>
+        </td>
+        <td>
+          Eur {{article.prix}}
+        </td>
+        <td>
+          {{article.quantite}}
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>
+        Sous-Total( {{nbreArticle}} article): <span>{{total}} Eur</span>
+      </th>
+    </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
